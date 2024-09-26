@@ -28,8 +28,8 @@ jobs:
 
       - name: Use Codecov to track coverage
         uses: codecov/codecov-action@v4
-        with:
-          files: ./coverage.xml   # coverage report
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Build documentation
         run: poetry run make html --directory docs/
