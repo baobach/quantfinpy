@@ -1,4 +1,4 @@
-# quantfinpy
+# quantfin.py
 
 Quantfin.py is a python package focus on implementing the ideas in the book Advances in Financial Machine Learning by Dr Prado. This package modify some of the codes, format with the modern Black format.
 
@@ -8,9 +8,12 @@ Quantfin.py is a python package focus on implementing the ideas in the book Adva
 $ pip install quantfinpy
 ```
 
-## Usage
+## The project is in building process
 
-- TODO
+- Create separate functions for each code snippet in each chapter with proper formatting and docstrings.
+- Format code using BLACK format and python PEP8 naming convention.
+- Build a detail documentation with examples on using the library.
+- Optimize the function for multiprocessing.
 
 ## Contributing
 
