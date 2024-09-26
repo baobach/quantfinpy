@@ -18,6 +18,7 @@ scikit-learn = "^1.5.2"
 [tool.poetry.group.dev.dependencies]
 pytest = ">=7.1"
 pytest-cov = ">=4.0"
+python-semantic-release = "^9.8.8"
 
 [tool.semantic_release]
 version_toml = [
