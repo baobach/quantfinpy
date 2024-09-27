@@ -1,12 +1,12 @@
 # Quantfinpy
 
-[![PyPI](https://img.shields.io/pypi/v/quantfinpy.svg)][pypi_]
-[![Status](https://img.shields.io/pypi/status/quantfinpy.svg)][status]
-[![Python Version](https://img.shields.io/pypi/pyversions/quantfinpy)][python version]
-[![License](https://img.shields.io/pypi/l/quantfinpy)][license]
+[![PyPI](https://img.shields.io/pypi/v/quantfin-py.svg)][pypi_]
+[![Status](https://img.shields.io/pypi/status/quantfin-py.svg)][status]
+[![Python Version](https://img.shields.io/pypi/pyversions/quantfin-py)][python version]
+[![License](https://img.shields.io/github/license/baobach/quantfinpy)][license]
 
-[![Read the documentation at https://quantfinpy.readthedocs.io/](https://img.shields.io/readthedocs/quantfinpy/latest.svg?label=Read%20the%20Docs)][read the docs]
-[![Codecov](https://codecov.io/gh/baobach/quantfinpy/branch/main/graph/badge.svg)][codecov]
+[![Read the documentation at https://quantfin-py.readthedocs.io/](https://img.shields.io/readthedocs/quantfin-py/latest.svg?label=Read%20the%20Docs)][read the docs]
+[![Codecov](https://codecov.io/gh/baobach/quantfinpy/graph/badge.svg?token=SDI5KVX8CO)][codecov]
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
 [![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
