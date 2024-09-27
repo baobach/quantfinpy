@@ -6,7 +6,6 @@
 [![License](https://img.shields.io/pypi/l/quantfinpy)][license]
 
 [![Read the documentation at https://quantfinpy.readthedocs.io/](https://img.shields.io/readthedocs/quantfinpy/latest.svg?label=Read%20the%20Docs)][read the docs]
-[![Tests](https://github.com/baobach/quantfinpy/workflows/Tests/badge.svg)][tests]
 [![Codecov](https://codecov.io/gh/baobach/quantfinpy/branch/main/graph/badge.svg)][codecov]
 
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
@@ -16,7 +15,6 @@
 [status]: https://pypi.org/project/quantfinpy/
 [python version]: https://pypi.org/project/quantfinpy
 [read the docs]: https://quantfinpy.readthedocs.io/
-[tests]: https://github.com/baobach/quantfinpy/actions?workflow=Tests
 [codecov]: https://app.codecov.io/gh/baobach/quantfinpy
 [pre-commit]: https://github.com/pre-commit/pre-commit
 [black]: https://github.com/psf/black
@@ -27,7 +25,11 @@
 
 ## Requirements
 
-- TODO
+- python: 3.11
+- numpy: 1.26.4
+- numba: 0.60.0
+- pandas: 2.2.3
+- scikit-learn: 1.5.2
 
 ## Installation
 
