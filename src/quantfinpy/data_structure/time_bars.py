@@ -25,7 +25,7 @@ class TimeBars(BaseBars):
 
     def __init__(self, resolution: str, num_units: int, batch_size: int = 20000000):
         """
-        Constructor
+        Constructor for TimeBars
 
         Parameters
         ----------
