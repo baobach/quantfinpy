@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v0.2.0 (2024-09-27)
+
+### Build
+
+* build(core): add imbalance bars data structure ([`a9ca9d8`](https://github.com/baobach/quantfinpy/commit/a9ca9d8aefe0679bda0fc5b33d8d597be508b495))
+
+### Test
+
+* test: add test for imbalance bars data structure ([`0a839f1`](https://github.com/baobach/quantfinpy/commit/0a839f123a0473728c20aef8298e7d717a7c3f66))
+
 ## v0.0.0 (2024-09-26)
 
 ### Build
@@ -7,6 +17,10 @@
 * build: update settings for sematic release ([`f3fb638`](https://github.com/baobach/quantfinpy/commit/f3fb6386ad6a4cc45d03cf902ca2b7c4244e5a74))
 
 * build: update semantic_release settings ([`ebfcd9c`](https://github.com/baobach/quantfinpy/commit/ebfcd9cd8c83c80e9c33cb49cb6ef478f2769d98))
+
+## v0.1.0 (2024-09-26)
+
+### Build
 
 * build: add PSR as dev dependency ([`04d9989`](https://github.com/baobach/quantfinpy/commit/04d99899b27871ec2ccee636f4d49b5f54ee046d))
 
