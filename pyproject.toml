@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quantfinpy"
-version = "0.2.0"
+version = "0.3.0"
 description = "Quantfin.py is a python package focus on implementing the ideas in the book Advances in Financial Machine Learning by Dr Prado. This package modify some of the codes, format with the modern Black format."
 authors = ["Robert Bach"]
 license = "MIT"

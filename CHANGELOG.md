@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## v0.3.0 (2024-09-30)
+
+### Build
+
+* build: update dependencies and remove token from ci-cd workflow ([`99b6186`](https://github.com/baobach/quantfinpy/commit/99b618677bdf4fb8e7f7ad5a3b69e4fbacc7e756))
+
+### Documentation
+
+* docs: update readme ([`293883c`](https://github.com/baobach/quantfinpy/commit/293883c5d75beb9373587ec01acca3a95bab5410))
+
+* docs: update readme file ([`5f8a68c`](https://github.com/baobach/quantfinpy/commit/5f8a68c0ba8afcf53f87779eeb1a14dd54d5e10c))
+
+* docs: update readme ([`02bb020`](https://github.com/baobach/quantfinpy/commit/02bb020a8b3f284d64aa391acee51f75f5fd4056))
+
+### Feature
+
+* feat: add fractional differential feature to the util module ([`437f76a`](https://github.com/baobach/quantfinpy/commit/437f76aeeed32b05c0cb093ecf58d0f075842b48))
+
+### Fix
+
+* fix: added helper function to split the data frame into chunks ([`09cd660`](https://github.com/baobach/quantfinpy/commit/09cd660e52e51444a23867e80efc2396b8abe1bc))
+
+### Test
+
+* test: add various tests for updated features and refactor old tests ([`8172bf3`](https://github.com/baobach/quantfinpy/commit/8172bf345193d5c619461c961e0648ff2bc9da14))
+
 ## v0.2.0 (2024-09-27)
 
 ### Build
@@ -10,9 +36,13 @@
 
 * test: add test for imbalance bars data structure ([`0a839f1`](https://github.com/baobach/quantfinpy/commit/0a839f123a0473728c20aef8298e7d717a7c3f66))
 
-## v0.1.0 (2024-09-26)
+## v0.0.0 (2024-09-26)
 
 ### Build
+
+* build: update settings for sematic release ([`f3fb638`](https://github.com/baobach/quantfinpy/commit/f3fb6386ad6a4cc45d03cf902ca2b7c4244e5a74))
+
+* build: update semantic_release settings ([`ebfcd9c`](https://github.com/baobach/quantfinpy/commit/ebfcd9cd8c83c80e9c33cb49cb6ef478f2769d98))
 
 * build: add PSR as dev dependency ([`04d9989`](https://github.com/baobach/quantfinpy/commit/04d99899b27871ec2ccee636f4d49b5f54ee046d))
 
@@ -42,10 +72,6 @@
 
 * test(core): add test functions and data ([`093f705`](https://github.com/baobach/quantfinpy/commit/093f7058359967e22396f190c03438326b7e05ae))
 
-## v0.0.0 (2024-09-26)
+### Unknown
 
-### Build
-
-* build: update settings for sematic release ([`f3fb638`](https://github.com/baobach/quantfinpy/commit/f3fb6386ad6a4cc45d03cf902ca2b7c4244e5a74))
-
-* build: update semantic_release settings ([`ebfcd9c`](https://github.com/baobach/quantfinpy/commit/ebfcd9cd8c83c80e9c33cb49cb6ef478f2769d98))
+* initial package setup ([`c490fd3`](https://github.com/baobach/quantfinpy/commit/c490fd3da93f101a9f0ff087dddf20de69da7b98))
