@@ -36,7 +36,7 @@ class TimeBars(BaseBars):
         batch_size : int
             Number of rows to read in from the csv, per batch (default is 2e7).
         """
-        BaseBars.__init__(self, metric=None, batch_size=batch_size)
+        BaseBars.__init__(self, inform_bar_type=None, batch_size=batch_size)
 
         # Threshold at which to sample (in seconds)
         self.time_bar_thresh_mapping = {'D': 86400, 'H': 3600, 'MIN': 60, 'S': 1}  # Number of seconds
@@ -77,7 +77,7 @@ class TimeBars(BaseBars):
             # Set variables
             date_time = row[0].timestamp()  # Convert to UTC timestamp
             self.tick_num += 1
-            price = np.float(row[1])
+            price = np.float64(row[1])
             volume = row[2]
             dollar_value = price * volume
             signed_tick = self._apply_tick_rule(price)

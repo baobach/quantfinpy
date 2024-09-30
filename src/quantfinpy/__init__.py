@@ -8,6 +8,7 @@ import quantfinpy.data_structure as data_structure
 import quantfinpy.filters.filters as filters
 import quantfinpy.labeling as labeling
 import quantfinpy.util as util
+import quantfinpy.dataset as dataset
 
 # read version from installed package
 from importlib.metadata import version

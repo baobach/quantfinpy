@@ -11,35 +11,7 @@ import numpy as np
 import pandas as pd
 
 from quantfinpy.util.fast_ewma import ewma
-
-
-def _crop_data_frame_into_chunks(data_frame: pd.DataFrame, chunksize_rows: int) -> list:
-    # pylint: disable=invalid-name
-    """
-    Splits a DataFrame into chunks of a specified size.
-
-    Parameters
-    ----------
-    data_frame : pd.DataFrame
-        The input DataFrame to be split.
-    chunksize_rows : int
-        The number of rows in each chunk.
-
-    Returns
-    -------
-    list
-        A list of chunks, where each chunk is a pd.DataFrame.
-
-    Notes
-    -----
-    This is private method used to split a DataFrame into chunks.
-    """
-    chunks = []
-    for _, chunk in data_frame.groupby(pd.RangeIndex(len(data_frame)) // chunksize_rows):
-        chunks.append(chunk)
-    return chunks
-# pylint: disable=too-many-instance-attributes
-
+from quantfinpy.util.helper import crop_data_frame_in_batches
 
 class BaseBars(ABC):
     """
@@ -168,7 +140,7 @@ class BaseBars(ABC):
                 yield batch
 
         elif isinstance(file_path_or_df, pd.DataFrame):
-            for batch in _crop_data_frame_into_chunks(file_path_or_df, self.batch_size):
+            for batch in crop_data_frame_in_batches(file_path_or_df, self.batch_size):
                 yield batch
 
         else:
