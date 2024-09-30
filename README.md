@@ -1,23 +1,14 @@
 # Quantfinpy
 
-[![PyPI](https://img.shields.io/pypi/v/quantfin-py.svg)][pypi_]
-[![Status](https://img.shields.io/pypi/status/quantfin-py.svg)][status]
-[![Python Version](https://img.shields.io/pypi/pyversions/quantfin-py)][python version]
-[![License](https://img.shields.io/github/license/baobach/quantfinpy)][license]
+<h2 align="center">The Advance ML Toolbox for Quantitative Finance</h2>
 
-[![Read the documentation at https://quantfin-py.readthedocs.io/](https://img.shields.io/readthedocs/quantfin-py/latest.svg?label=Read%20the%20Docs)][read the docs]
-[![Codecov](https://codecov.io/gh/baobach/quantfinpy/graph/badge.svg?token=SDI5KVX8CO)][codecov]
-
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)][pre-commit]
-[![Black](https://img.shields.io/badge/code%20style-black-000000.svg)][black]
-
-[pypi_]: https://pypi.org/project/quantfinpy/
-[status]: https://pypi.org/project/quantfinpy/
-[python version]: https://pypi.org/project/quantfinpy
-[read the docs]: https://quantfinpy.readthedocs.io/
-[codecov]: https://app.codecov.io/gh/baobach/quantfinpy
-[pre-commit]: https://github.com/pre-commit/pre-commit
-[black]: https://github.com/psf/black
+<p align="center">
+<a href="https://github.com/baobach/quantfinpy/actions"><img alt="Actions Status" src="https://img.shields.io/github/actions/workflow/status/baobach/quantfinpy/ci-cd.yml"></a>
+<a href="https://quantfin-py.readthedocs.io/en/stable/?badge=stable"><img alt="Documentation Status" src="https://img.shields.io/readthedocs/quantfin-py"></a>
+<a href="https://app.codecov.io/gh/baobach/quantfinpy"><img alt="Coverage Status" src="https://img.shields.io/codecov/c/github/baobach/quantfinpy?logo=codecov"></a>
+<a href="https://github.com/baobach/quantfinpy/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/github/license/baobach/quantfinpy"></a>
+<a href="https://github.com/baobach/quantfinpy"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+</p>
 
 ## Features
 
@@ -33,15 +24,11 @@
 
 ## Installation
 
-You can install _Quantfinpy_ via [pip] from [PyPI]:
-
-```console
-/$ pip install quantfinpy
-```
+_Pending_
 
 ## Usage
 
-Please see the [Command-line Reference] for details.
+_Pending_
 
 ## Contributing
 
@@ -60,12 +47,9 @@ please [file an issue] along with a detailed description.
 
 ## Credits
 
-[pypi]: https://pypi.org/
-[file an issue]: https://github.com/baobach/quantfinpy/issues
-[pip]: https://pip.pypa.io/
+_Pending_
 
 <!-- github-only -->
 
 [license]: https://github.com/baobach/quantfinpy/blob/main/LICENSE
 [contributor guide]: https://github.com/baobach/quantfinpy/blob/main/CONTRIBUTING.md
-[command-line reference]: https://quantfinpy.readthedocs.io/en/latest/usage.html
