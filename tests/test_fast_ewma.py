@@ -1,5 +1,5 @@
 """
-Tests for the `fast_ewma` module.
+Tests for the `util.fast_ewma` module.
 """
 
 import unittest
