@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v0.3.1 (2024-10-01)
+
+### Build
+
+* build: add black and precommit to automate code formatting ([`32ad06f`](https://github.com/baobach/quantfinpy/commit/32ad06f0e52ac070979008f731e547dcfbe44764))
+
+### Documentation
+
+* docs: update 1st example for data_structure module ([`29e6987`](https://github.com/baobach/quantfinpy/commit/29e6987a815ab00617627dd413ed977e91396e79))
+
+* docs: update readme badges ([`f450f30`](https://github.com/baobach/quantfinpy/commit/f450f30ef8ba658db7e83e1c9b487715df111614))
+
+### Fix
+
+* fix: fix bug related to input dataframe and path to data ([`267dc6f`](https://github.com/baobach/quantfinpy/commit/267dc6fe4ea71c9f8cfe45d7f6ad4c74ec6bbbcf))
+
+### Refactor
+
+* refactor: update code style to black ([`9365141`](https://github.com/baobach/quantfinpy/commit/936514174af49e5b1f74c7dbdddc7bc5359df154))
+
+### Test
+
+* test: update new tick_sample data with 500,000 rows ([`a0af3e3`](https://github.com/baobach/quantfinpy/commit/a0af3e3842949b58bf03ad3cbb1ce37076e20b65))
+
 ## v0.3.0 (2024-09-30)
 
 ### Build
