@@ -217,7 +217,14 @@ class BaseBars(ABC):
             values = raw_tick_data
 
         elif isinstance(raw_tick_data, pd.DataFrame):
-            values = raw_tick_data.values
+            # Check if the DataFrame has 3 columns, if yes, return Dataframe.values, if not reset index
+            if len(raw_tick_data.columns) == 3:
+                values = raw_tick_data.values
+
+            else:
+                # Reset index to move DateTimeIndex to a column
+                idx_reset = raw_tick_data.reset_index()
+                values = idx_reset.values
 
         else:
             raise ValueError(
