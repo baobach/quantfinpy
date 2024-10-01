@@ -13,8 +13,17 @@ Logic regarding the various sampling techniques, in particular:
 * Dollar Run Bars (EMA and Const)
 """
 
-from quantfinpy.data_structure.standard_bars import     get_tick_bars, get_dollar_bars, get_volume_bars
-from quantfinpy.data_structure.time_bars import         get_time_bars
-from quantfinpy.data_structure.imbalance_bars import    get_ema_dollar_imbalance_bars, get_ema_volume_imbalance_bars, \
-                                                        get_ema_tick_imbalance_bars, get_const_dollar_imbalance_bars, \
-                                                        get_const_volume_imbalance_bars, get_const_tick_imbalance_bars
+from quantfinpy.data_structure.standard_bars import (
+    get_tick_bars,
+    get_dollar_bars,
+    get_volume_bars,
+)
+from quantfinpy.data_structure.time_bars import get_time_bars
+from quantfinpy.data_structure.imbalance_bars import (
+    get_ema_dollar_imbalance_bars,
+    get_ema_volume_imbalance_bars,
+    get_ema_tick_imbalance_bars,
+    get_const_dollar_imbalance_bars,
+    get_const_volume_imbalance_bars,
+    get_const_tick_imbalance_bars,
+)

@@ -8,6 +8,7 @@ process.
 import numpy as np
 import pandas as pd
 
+
 def get_weights(diff_amt: float, size: int) -> np.ndarray:
     """
     The helper function generates weights that are used to compute fractionally
@@ -100,14 +101,16 @@ def frac_diff(series: pd.Series, diff_amt: float, thresh: float = 0.01) -> pd.Da
     output_df = {}
     for name in series.columns:
         series_f = series[[name]].ffill().dropna()
-        output_df_ = pd.Series(index=series.index, dtype='float64')
+        output_df_ = pd.Series(index=series.index, dtype="float64")
 
         for iloc in range(skip, series_f.shape[0]):
             loc = series_f.index[iloc]
 
             # At this point all entries are non-NAs so no need for the following check
             # if np.isfinite(series.loc[loc, name]):
-            output_df_[loc] = np.dot(weights[-(iloc + 1):, :].T, series_f.loc[:loc])[0, 0]
+            output_df_[loc] = np.dot(weights[-(iloc + 1) :, :].T, series_f.loc[:loc])[
+                0, 0
+            ]
 
         output_df[name] = output_df_.copy(deep=True)
     output_df = pd.concat(output_df, axis=1)
@@ -147,7 +150,7 @@ def get_weights_ffd(diff_amt: float, thresh: float, lim: int) -> np.ndarray:
     Reference: Advances in Financial Machine Learning, Chapter 5, section 5.4.2, page 78.
     """
 
-    weights = [1.]
+    weights = [1.0]
     k = 1
 
     # The algorithm below executes the iterativetive estimation (section 5.4.2, page 78)
@@ -172,9 +175,7 @@ def get_weights_ffd(diff_amt: float, thresh: float, lim: int) -> np.ndarray:
 
 
 def frac_diff_ffd(
-    series: pd.Series, 
-    diff_amt: float, 
-    thresh: float = 1e-5
+    series: pd.Series, diff_amt: float, thresh: float = 1e-5
 ) -> pd.DataFrame:
     """
     The steps are as follows:
@@ -222,7 +223,7 @@ def frac_diff_ffd(
     # 2.2) compute fractionally differenced series for each stock
     for name in series.columns:
         series_f = series[[name]].ffill().dropna()
-        temp_df_ = pd.Series(index=series.index, dtype='float64')
+        temp_df_ = pd.Series(index=series.index, dtype="float64")
         for iloc1 in range(width, series_f.shape[0]):
             loc0 = series_f.index[iloc1 - width]
             loc1 = series.index[iloc1]
@@ -236,6 +237,7 @@ def frac_diff_ffd(
     # transform the dictionary into a data frame
     output_df = pd.concat(output_df, axis=1)
     return output_df
+
 
 # def get_weights(diff_amt, size):
 #     """ This is a pass-through function to the `get_weights` function. """

@@ -38,7 +38,7 @@ jobs:
     permissions:
       id-token: write
       contents: write
-    
+
     # Only run this job if the "ci" job passes
     needs: ci
 

@@ -29,7 +29,9 @@ class StandardBars(BaseBars):
     Encapsulates the logic for constructing the standard bars from Chapter 2 of "Advances in Financial Machine Learning" by Marcos Lopez de Prado. This class is not intended for direct use. Instead, utilize package functions like `get_dollar_bars` to create an instance and construct the standard bars.
     """
 
-    def __init__(self, inform_bar_type: str, threshold: int = 50000, batch_size: int = 20000000):
+    def __init__(
+        self, inform_bar_type: str, threshold: int = 50000, batch_size: int = 20000000
+    ):
         """
         Constructor for Standard Bars
 
@@ -53,7 +55,12 @@ class StandardBars(BaseBars):
         """
         self.open_price = None
         self.high_price, self.low_price = -np.inf, np.inf
-        self.cum_statistics = {'cum_ticks': 0, 'cum_dollar_value': 0, 'cum_volume': 0, 'cum_buy_volume': 0}
+        self.cum_statistics = {
+            "cum_ticks": 0,
+            "cum_dollar_value": 0,
+            "cum_volume": 0,
+            "cum_buy_volume": 0,
+        }
 
     def _extract_bars(self, raw_tick_data: Union[list, tuple, np.ndarray]) -> list:
         """
@@ -89,24 +96,33 @@ class StandardBars(BaseBars):
             self.high_price, self.low_price = self._update_high_low(price)
 
             # Calculations
-            self.cum_statistics['cum_ticks'] += 1
-            self.cum_statistics['cum_dollar_value'] += dollar_value
-            self.cum_statistics['cum_volume'] += volume
+            self.cum_statistics["cum_ticks"] += 1
+            self.cum_statistics["cum_dollar_value"] += dollar_value
+            self.cum_statistics["cum_volume"] += volume
             if signed_tick == 1:
-                self.cum_statistics['cum_buy_volume'] += volume
+                self.cum_statistics["cum_buy_volume"] += volume
 
             # If threshold reached then take a sample
-            if self.cum_statistics[self.inform_bar_type] >= self.threshold:  # pylint: disable=eval-used
-                self._create_bars(date_time, price,
-                                  self.high_price, self.low_price, list_bars)
+            if (
+                self.cum_statistics[self.inform_bar_type] >= self.threshold
+            ):  # pylint: disable=eval-used
+                self._create_bars(
+                    date_time, price, self.high_price, self.low_price, list_bars
+                )
 
                 # Reset cache
                 self._reset_cache()
         return list_bars
 
 
-def get_dollar_bars(file_path_or_df: Union[str, Iterable[str], pd.DataFrame], 
-                    threshold: float = 70000000, batch_size: int = 20000000, verbose: bool = True, to_csv: bool = False, output_path: Optional[str] = None) -> pd.DataFrame:
+def get_dollar_bars(
+    file_path_or_df: Union[str, Iterable[str], pd.DataFrame],
+    threshold: float = 70000000,
+    batch_size: int = 20000000,
+    verbose: bool = True,
+    to_csv: bool = False,
+    output_path: Optional[str] = None,
+) -> pd.DataFrame:
     """
     Creates a DataFrame of dollar bars with columns: date_time, open, high, low, close, volume, cum_buy_volume, cum_ticks, cum_dollar_value.
 
@@ -129,18 +145,32 @@ def get_dollar_bars(file_path_or_df: Union[str, Iterable[str], pd.DataFrame],
     -------
     pd.DataFrame
         Dataframe of dollar bars.
-    
+
     Notes
     -----
     Following the paper "The Volume Clock: Insights into the high frequency paradigm" by Lopez de Prado, et al, it is suggested that using 1/50 of the average daily dollar value, would result in more desirable statistical properties.
     """
 
-    bars = StandardBars(inform_bar_type='cum_dollar_value', threshold=threshold, batch_size=batch_size)
-    dollar_bars = bars.batch_run(file_path_or_df=file_path_or_df, verbose=verbose, to_csv=to_csv, output_path=output_path)
+    bars = StandardBars(
+        inform_bar_type="cum_dollar_value", threshold=threshold, batch_size=batch_size
+    )
+    dollar_bars = bars.batch_run(
+        file_path_or_df=file_path_or_df,
+        verbose=verbose,
+        to_csv=to_csv,
+        output_path=output_path,
+    )
     return dollar_bars
 
 
-def get_volume_bars(file_path_or_df: Union[str, Iterable[str], pd.DataFrame], threshold: float = 70000000, batch_size: int = 20000000, verbose: bool = True, to_csv: bool = False, output_path: Optional[str] = None):
+def get_volume_bars(
+    file_path_or_df: Union[str, Iterable[str], pd.DataFrame],
+    threshold: float = 70000000,
+    batch_size: int = 20000000,
+    verbose: bool = True,
+    to_csv: bool = False,
+    output_path: Optional[str] = None,
+):
     """
     Create a DataFrame of volume bars with columns: date_time, open, high, low, close, volume, cum_buy_volume, cum_ticks, cum_dollar_value.
 
@@ -168,12 +198,26 @@ def get_volume_bars(file_path_or_df: Union[str, Iterable[str], pd.DataFrame], th
     -----
     Following the paper "The Volume Clock: Insights into the high frequency paradigm" by Lopez de Prado, et al, it is suggested that using 1/50 of the average daily volume, would result in more desirable statistical properties.
     """
-    bars = StandardBars(inform_bar_type='cum_volume', threshold=threshold, batch_size=batch_size)
-    volume_bars = bars.batch_run(file_path_or_df=file_path_or_df, verbose=verbose, to_csv=to_csv, output_path=output_path)
+    bars = StandardBars(
+        inform_bar_type="cum_volume", threshold=threshold, batch_size=batch_size
+    )
+    volume_bars = bars.batch_run(
+        file_path_or_df=file_path_or_df,
+        verbose=verbose,
+        to_csv=to_csv,
+        output_path=output_path,
+    )
     return volume_bars
 
 
-def get_tick_bars(file_path_or_df: Union[str, Iterable[str], pd.DataFrame], threshold: float = 70000000, batch_size: int = 20000000, verbose: bool = True, to_csv: bool = False, output_path: Optional[str] = None):
+def get_tick_bars(
+    file_path_or_df: Union[str, Iterable[str], pd.DataFrame],
+    threshold: float = 70000000,
+    batch_size: int = 20000000,
+    verbose: bool = True,
+    to_csv: bool = False,
+    output_path: Optional[str] = None,
+):
     """
     Create a DataFrame of tick bars with columns: date_time, open, high, low, close, volume, cum_buy_volume, cum_ticks, cum_dollar_value.
 
@@ -201,6 +245,13 @@ def get_tick_bars(file_path_or_df: Union[str, Iterable[str], pd.DataFrame], thre
     -----
     Following the paper "The Volume Clock: Insights into the high frequency paradigm" by Lopez de Prado, et al, it is suggested that using 1/50 of the average daily volume, would result in more desirable statistical properties.
     """
-    bars = StandardBars(inform_bar_type='cum_ticks', threshold=threshold, batch_size=batch_size)
-    tick_bars = bars.batch_run(file_path_or_df=file_path_or_df, verbose=verbose, to_csv=to_csv, output_path=output_path)
+    bars = StandardBars(
+        inform_bar_type="cum_ticks", threshold=threshold, batch_size=batch_size
+    )
+    tick_bars = bars.batch_run(
+        file_path_or_df=file_path_or_df,
+        verbose=verbose,
+        to_csv=to_csv,
+        output_path=output_path,
+    )
     return tick_bars

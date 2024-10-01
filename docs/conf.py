@@ -6,9 +6,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = u"quantfinpy"
-copyright = u"2024, Robert Bach"
-author = u"Robert Bach"
+project = "quantfinpy"
+copyright = "2024, Robert Bach"
+author = "Robert Bach"
 
 # -- General configuration ---------------------------------------------------
 

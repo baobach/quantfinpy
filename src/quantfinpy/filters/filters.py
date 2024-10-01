@@ -8,7 +8,9 @@ from typing import Union
 
 
 # Snippet 2.4, page 39, The Symmetric CUSUM Filter.
-def cusum_filter(raw_time_series: pd.Series, threshold: float, time_stamps: bool=True) -> Union[pd.DatetimeIndex, list]:
+def cusum_filter(
+    raw_time_series: pd.Series, threshold: float, time_stamps: bool = True
+) -> Union[pd.DatetimeIndex, list]:
     """
     The Symmetric Dynamic/Fixed CUSUM Filter.
 
@@ -28,7 +30,7 @@ def cusum_filter(raw_time_series: pd.Series, threshold: float, time_stamps: bool
         When the abs(change) is larger than the threshold, the function captures.
     time_stamps : bool
         Default is to return a DateTimeIndex, change to false to have it return a list.
-    
+
     Returns
     -------
     t_events : pd.DatetimeIndex or list
@@ -45,14 +47,14 @@ def cusum_filter(raw_time_series: pd.Series, threshold: float, time_stamps: bool
 
     # log returns
     raw_time_series = pd.DataFrame(raw_time_series)  # Convert to DataFrame
-    raw_time_series.columns = ['price']
-    raw_time_series['log_ret'] = raw_time_series.price.apply(np.log).diff()
+    raw_time_series.columns = ["price"]
+    raw_time_series["log_ret"] = raw_time_series.price.apply(np.log).diff()
     if isinstance(threshold, (float, int)):
-        raw_time_series['threshold'] = threshold
+        raw_time_series["threshold"] = threshold
     elif isinstance(threshold, pd.Series):
-        raw_time_series.loc[threshold.index, 'threshold'] = threshold
+        raw_time_series.loc[threshold.index, "threshold"] = threshold
     else:
-        raise ValueError('threshold is neither float nor pd.Series!')
+        raise ValueError("threshold is neither float nor pd.Series!")
 
     raw_time_series = raw_time_series.iloc[1:]  # Drop first na values
 
@@ -80,7 +82,13 @@ def cusum_filter(raw_time_series: pd.Series, threshold: float, time_stamps: bool
     return t_events
 
 
-def z_score_filter(raw_time_series: pd.Series, mean_window: int, std_window: int, z_score: float=3, time_stamps: bool=True) -> Union[pd.DatetimeIndex, list]:
+def z_score_filter(
+    raw_time_series: pd.Series,
+    mean_window: int,
+    std_window: int,
+    z_score: float = 3,
+    time_stamps: bool = True,
+) -> Union[pd.DatetimeIndex, list]:
     """
     Filter which implements z_score filter.
 
@@ -106,8 +114,11 @@ def z_score_filter(raw_time_series: pd.Series, mean_window: int, std_window: int
     -----
     Reference: Implement the idea of z-score filter here at [StackOverflow Question](https://stackoverflow.com/questions/22583391/peak-signal-detection-in-realtime-timeseries-data).
     """
-    t_events = raw_time_series[raw_time_series >= raw_time_series.rolling(window=mean_window).mean() +
-                               z_score * raw_time_series.rolling(window=std_window).std()].index
+    t_events = raw_time_series[
+        raw_time_series
+        >= raw_time_series.rolling(window=mean_window).mean()
+        + z_score * raw_time_series.rolling(window=std_window).std()
+    ].index
     if time_stamps:
         event_timestamps = pd.DatetimeIndex(t_events)
         return event_timestamps

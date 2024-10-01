@@ -6,9 +6,8 @@ import pandas as pd
 import numpy as np
 from typing import List
 
-def crop_data_frame_in_batches(
-    df: pd.DataFrame, chunksize: int
-) -> List[pd.DataFrame]:
+
+def crop_data_frame_in_batches(df: pd.DataFrame, chunksize: int) -> List[pd.DataFrame]:
     """
     Splits df into chunks of chunksize.
 

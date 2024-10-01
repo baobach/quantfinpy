@@ -8,6 +8,7 @@ https://towardsdatascience.com/financial-machine-learning-part-0-bars-745897d4e4
 import numpy as np
 from numba import njit
 
+
 @njit(nogil=True)
 def ewma(arr_in: np.ndarray, window: int) -> np.ndarray:
     """
@@ -37,7 +38,7 @@ def ewma(arr_in: np.ndarray, window: int) -> np.ndarray:
     ewma_old: float = arr_in[0]
     ewma_arr[0] = ewma_old
     for i in range(1, arr_length):
-        weight += (1 - alpha)**i
+        weight += (1 - alpha) ** i
         ewma_old = ewma_old * (1 - alpha) + arr_in[i]
         ewma_arr[i] = ewma_old / weight
 
